@@ -1,0 +1,117 @@
+.testimonialsSection {
+    padding: 10rem 2rem;
+    background-color: var(--color-background);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.container {
+    max-width: 800px;
+    width: 100%;
+}
+
+.heading {
+    font-family: var(--font-primary);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 300;
+    letter-spacing: -0.02em;
+    margin-bottom: 4rem;
+    color: var(--color-text);
+}
+
+.slider {
+    position: relative;
+    height: 300px;
+    /* Adjust based on content */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slide {
+    position: absolute;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.slide.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.quote {
+    font-family: var(--font-secondary);
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    line-height: 1.6;
+    color: var(--color-text-muted);
+    font-style: italic;
+    margin-bottom: 2rem;
+}
+
+.authorGroup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.author {
+    font-family: var(--font-primary);
+    font-weight: 500;
+    font-size: 1.1rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-text);
+}
+
+.location {
+    font-family: var(--font-secondary);
+    font-size: 0.9rem;
+    color: var(--color-accent);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.dots {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: all 0.3s ease;
+}
+
+.dot.activeDot {
+    background-color: var(--color-accent);
+    transform: scale(1.5);
+}
+
+.dot:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+@media (max-width: 768px) {
+    .testimonialsSection {
+        padding: 6rem 1rem;
+    }
+
+    .slider {
+        height: 350px;
+    }
+}

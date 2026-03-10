@@ -1,0 +1,73 @@
+/* ============================================
+   PRELOADER (SPLIT SCREEN OVERLAY)
+   ============================================ */
+
+.preloader {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    /* Let clicks pass through once it starts animating out */
+}
+
+/* The two dark halves that split apart */
+.halfTop,
+.halfBottom {
+    position: absolute;
+    left: 0;
+    width: 100vw;
+    height: 50vh;
+    background-color: #030303;
+    transition: transform 1.2s cubic-bezier(0.77, 0, 0.175, 1);
+    z-index: 1;
+    /* Below text initially */
+}
+
+.halfTop {
+    top: 0;
+}
+
+.halfBottom {
+    bottom: 0;
+}
+
+/* The branded gold text */
+.brandText {
+    position: relative;
+    z-index: 2;
+    opacity: 1;
+    transition: opacity 0.6s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logoImage {
+    width: clamp(150px, 20vw, 300px);
+    height: auto;
+    object-fit: contain;
+}
+
+/* ============================================
+   LOADED STATE ANIMATIONS
+   ============================================ */
+
+/* Fade out the text first */
+.loaded .brandText {
+    opacity: 0;
+}
+
+/* Then split the screen in half vertically, revealing the website */
+.loaded .halfTop {
+    transform: translateY(-100%);
+    transition-delay: 0.5s;
+    /* Wait for text to fade mostly out */
+}
+
+.loaded .halfBottom {
+    transform: translateY(100%);
+    transition-delay: 0.5s;
+}

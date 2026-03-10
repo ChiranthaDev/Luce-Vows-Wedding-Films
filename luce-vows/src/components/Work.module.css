@@ -1,0 +1,239 @@
+/* ============================================
+   WORK / SELECTED WORKS SECTION
+   Layout: Full-width alternating row strips
+   ============================================ */
+
+.workContainer {
+    background-color: #030303;
+    padding-bottom: 12vw;
+    overflow: hidden;
+}
+
+/* ---- Section Header ---- */
+.sectionHeader {
+    padding: 10vw 6vw 6vw;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.sectionLabel {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.35);
+}
+
+.sectionTitle {
+    font-family: var(--font-serif);
+    font-size: clamp(3rem, 7vw, 6rem);
+    font-weight: 300;
+    line-height: 1.05;
+    color: var(--color-light);
+    letter-spacing: 0.02em;
+}
+
+.sectionTitle em {
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.45);
+}
+
+/* ---- Project List ---- */
+.projectList {
+    display: flex;
+    flex-direction: column;
+}
+
+/* ---- Each Row ---- */
+.projectRow {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+    position: relative;
+}
+
+@media (min-width: 900px) {
+    .projectRow {
+        flex-direction: row;
+        min-height: 60vh;
+    }
+
+    .rowReverse {
+        flex-direction: row-reverse;
+    }
+}
+
+/* ---- Image Panel (16:9) ---- */
+.imagePanel {
+    flex: 0 0 60%;
+    overflow: hidden;
+    position: relative;
+}
+
+.imageWrapper {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    position: relative;
+}
+
+@media (min-width: 900px) {
+    .imageWrapper {
+        aspect-ratio: unset;
+        position: absolute;
+        inset: 0;
+    }
+}
+
+.imageWrapper video.videoPreview {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.projectRow:hover .imageWrapper video.videoPreview {
+    transform: scale(1.05);
+}
+
+.imageWrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 1.6s cubic-bezier(0.165, 0.84, 0.44, 1),
+        filter 1.2s ease;
+    filter: brightness(0.65) saturate(0.8);
+    transform-origin: center;
+}
+
+.projectRow:hover .imageWrapper img {
+    transform: scale(1.04);
+    filter: brightness(0.85) saturate(1);
+}
+
+/* ---- Play overlay on image ---- */
+.imageOverlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.projectRow:hover .imageOverlay {
+    opacity: 1;
+}
+
+.playRing {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(255, 255, 255, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.4s ease, background 0.4s ease;
+}
+
+.projectRow:hover .playRing {
+    transform: scale(1.1);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.playTriangle {
+    font-size: 1rem;
+    color: #fff;
+    margin-left: 4px;
+    /* optical center for play icon */
+}
+
+/* ---- Info Panel ---- */
+.infoPanel {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding: 3rem 4vw;
+    position: relative;
+    gap: 2rem;
+}
+
+@media (min-width: 900px) {
+    .infoPanel {
+        padding: 4vw 5vw;
+    }
+}
+
+.projectNumber {
+    font-family: var(--font-serif);
+    font-size: clamp(4rem, 7vw, 7rem);
+    color: rgba(255, 255, 255, 0.05);
+    font-weight: 300;
+    line-height: 1;
+    user-select: none;
+    flex-shrink: 0;
+    transition: color 0.5s ease;
+}
+
+.projectRow:hover .projectNumber {
+    color: rgba(255, 255, 255, 0.12);
+}
+
+.projectMeta {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.category {
+    font-family: var(--font-sans);
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.35);
+}
+
+.projectTitle {
+    font-family: var(--font-serif);
+    font-size: clamp(1.6rem, 3vw, 2.8rem);
+    font-weight: 300;
+    color: var(--color-light);
+    letter-spacing: 0.03em;
+    line-height: 1.2;
+    transition: letter-spacing 0.5s ease;
+}
+
+.projectRow:hover .projectTitle {
+    letter-spacing: 0.06em;
+}
+
+.divider {
+    width: 30px;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.2);
+    transition: width 0.5s ease;
+}
+
+.projectRow:hover .divider {
+    width: 60px;
+}
+
+.viewLink {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.4);
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+
+.projectRow:hover .viewLink {
+    color: rgba(255, 255, 255, 0.85);
+}

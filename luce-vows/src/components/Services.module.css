@@ -1,0 +1,135 @@
+/* ============================================
+   SERVICES SECTION
+   ============================================ */
+
+.servicesContainer {
+    background-color: #030303;
+    padding: 10vw 6vw;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.sectionHeader {
+    margin-bottom: 5vw;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.sectionLabel {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.35);
+}
+
+.sectionTitle {
+    font-family: var(--font-serif);
+    font-size: clamp(2.5rem, 5vw, 5rem);
+    font-weight: 300;
+    color: var(--color-light);
+    letter-spacing: 0.02em;
+}
+
+/* ---- Grid ---- */
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+}
+
+@media (min-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* ---- Card ---- */
+.card {
+    padding: 3.5rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+    cursor: default;
+    transition: background 0.3s ease;
+    position: relative;
+}
+
+@media (min-width: 768px) {
+    .card:nth-child(odd) {
+        padding-right: 4vw;
+    }
+
+    .card:nth-child(even) {
+        padding-left: 4vw;
+        border-left: 1px solid rgba(255, 255, 255, 0.07);
+    }
+}
+
+.card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.25);
+    transition: width 0.5s ease;
+}
+
+.card:hover::after {
+    width: 100%;
+}
+
+.number {
+    font-family: var(--font-serif);
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.18);
+    letter-spacing: 0.1em;
+    flex-shrink: 0;
+    padding-top: 0.3rem;
+    transition: color 0.4s ease;
+}
+
+.card:hover .number {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.cardBody {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.cardTitle {
+    font-family: var(--font-serif);
+    font-size: clamp(1.4rem, 2.5vw, 2rem);
+    font-weight: 300;
+    color: var(--color-light);
+    letter-spacing: 0.03em;
+    transition: letter-spacing 0.4s ease;
+}
+
+.card:hover .cardTitle {
+    letter-spacing: 0.07em;
+}
+
+.divider {
+    width: 24px;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.2);
+    transition: width 0.5s ease;
+}
+
+.card:hover .divider {
+    width: 48px;
+}
+
+.cardDesc {
+    font-family: var(--font-sans);
+    font-size: 0.88rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.38);
+    max-width: 380px;
+}

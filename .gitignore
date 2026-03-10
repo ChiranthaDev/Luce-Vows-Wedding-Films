@@ -1,0 +1,9 @@
+node_modules/
+dist/
+public/*.mp4
+luce-vows/node_modules/
+luce-vows/dist/
+luce-vows/public/*.mp4
+.env
+.env.local
+.DS_Store

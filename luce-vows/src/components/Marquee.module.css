@@ -1,0 +1,58 @@
+.marqueeContainer {
+    width: 100%;
+    overflow: hidden;
+    padding: 3rem 0;
+    background-color: var(--color-background);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    white-space: nowrap;
+    position: relative;
+}
+
+.marqueeContent {
+    display: flex;
+}
+
+.marqueeTrack {
+    display: flex;
+    animation: scroll 30s linear infinite;
+}
+
+.venueItem {
+    font-family: var(--font-primary);
+    font-size: 1.5rem;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+}
+
+.separator {
+    color: var(--color-accent);
+    margin-left: 2rem;
+    font-size: 1rem;
+    opacity: 0.7;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@media (max-width: 768px) {
+    .marqueeContainer {
+        padding: 2rem 0;
+    }
+
+    .venueItem {
+        font-size: 1.1rem;
+    }
+}

@@ -1,0 +1,106 @@
+/* ============================================
+   STATS SECTION
+   ============================================ */
+
+.statsContainer {
+    background-color: #030303;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    overflow: hidden;
+}
+
+/* ---- Marquee ---- */
+.marqueeWrapper {
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 1.2rem 0;
+    overflow: hidden;
+}
+
+.marqueeTrack {
+    display: flex;
+    width: max-content;
+    animation: marqueeScroll 18s linear infinite;
+}
+
+.marqueeItem {
+    font-family: var(--font-serif);
+    font-size: clamp(1rem, 2vw, 1.4rem);
+    font-weight: 300;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.2);
+    white-space: nowrap;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    letter-spacing: 0.05em;
+    transition: color 0.3s ease;
+}
+
+.marqueeDot {
+    font-style: normal;
+    font-size: 0.5rem;
+    color: rgba(255, 255, 255, 0.15);
+}
+
+@keyframes marqueeScroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* ---- Stats Grid ---- */
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 8vw 6vw;
+    gap: 0;
+}
+
+@media (min-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.statItem {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    padding: 3rem 0;
+    border-left: 1px solid rgba(255, 255, 255, 0.07);
+    padding-left: 3vw;
+}
+
+.statItem:first-child {
+    border-left: none;
+    padding-left: 0;
+}
+
+@media (max-width: 767px) {
+    .statItem:nth-child(3) {
+        border-left: none;
+        padding-left: 0;
+    }
+}
+
+.statValue {
+    font-family: var(--font-serif);
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-weight: 300;
+    color: var(--color-light);
+    letter-spacing: -0.02em;
+    line-height: 1;
+}
+
+.statLabel {
+    font-family: var(--font-sans);
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.3);
+}
