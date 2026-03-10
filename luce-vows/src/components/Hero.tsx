@@ -36,7 +36,7 @@ export default function Hero() {
         onTimeUpdate={handleTimeUpdate}
       >
         <source
-          src="/video1.mp4"
+          src="https://pub-c46c21c5c59344e18f2b5b212a3b78b7.r2.dev/video1.mp4"
           type="video/mp4"
         />
       </video>
