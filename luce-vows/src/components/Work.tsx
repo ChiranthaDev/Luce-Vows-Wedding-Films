@@ -2,10 +2,10 @@ import React from 'react';
 import styles from './Work.module.css';
 
 const PROJECTS = [
-    { id: 1, title: "Yashodha & Dhanushka", category: "Wedding", videoPreview: "https://pub-c46c21c5c59344e18f2b5b212a3b78b7.r2.dev/video1.mp4", link: "https://web.facebook.com/share/v/1Dgj3XpKam/" },
-    { id: 2, title: "Bride & Groom", category: "Wedding", videoPreview: "https://pub-c46c21c5c59344e18f2b5b212a3b78b7.r2.dev/video2.mp4", link: "https://web.facebook.com/share/v/19wbiiUZvc/" },
-    { id: 3, title: "Bride & Groom", category: "Engagement", videoPreview: "https://pub-c46c21c5c59344e18f2b5b212a3b78b7.r2.dev/video3.mp4", link: "https://web.facebook.com/share/v/18HxufVMtv/" },
-    { id: 4, title: "Bride & Groom", category: "Wedding", videoPreview: "https://pub-c46c21c5c59344e18f2b5b212a3b78b7.r2.dev/video4.mp4", link: "https://web.facebook.com/share/v/1AiSvKczmT/" }
+    { id: 1, title: "Yashodha & Dhanushka", category: "Wedding", videoPreview: "/video1.mp4", link: "https://web.facebook.com/share/v/1Dgj3XpKam/" },
+    { id: 2, title: "Bride & Groom", category: "Wedding", videoPreview: "/video2.mp4", link: "https://web.facebook.com/share/v/19wbiiUZvc/" },
+    { id: 3, title: "Bride & Groom", category: "Engagement", videoPreview: "/video3.mp4", link: "https://web.facebook.com/share/v/18HxufVMtv/" },
+    { id: 4, title: "Bride & Groom", category: "Wedding", videoPreview: "/video4.mp4", link: "https://web.facebook.com/share/v/1AiSvKczmT/" }
 ];
 
 export default function Work() {
