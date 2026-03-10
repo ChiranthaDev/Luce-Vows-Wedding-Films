@@ -31,6 +31,22 @@ export default function BackgroundAudio() {
         return () => window.removeEventListener('preloaderComplete', handlePreloaderComplete);
     }, []);
 
+    // Attempt auto-play on mount
+    useEffect(() => {
+        if (audioRef.current) {
+            audioRef.current.volume = 1;
+            const playPromise = audioRef.current.play();
+            if (playPromise !== undefined) {
+                playPromise.then(() => {
+                    setIsPlaying(true);
+                }).catch(() => {
+                    // Autoplay was blocked by browser.
+                    // The global click listener below will catch the first interaction.
+                });
+            }
+        }
+    }, []);
+
     // Global click listener to start audio on first interaction if not playing
     useEffect(() => {
         const handleFirstInteraction = (e: MouseEvent) => {
@@ -137,9 +153,10 @@ export default function BackgroundAudio() {
             </button>
             <audio
                 ref={audioRef}
-                src="/video1.mp4"
+                src="/video4.mp4"
                 loop
                 preload="auto"
+                autoPlay
             />
         </div>
     );

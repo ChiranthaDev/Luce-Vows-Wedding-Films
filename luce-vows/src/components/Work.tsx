@@ -2,9 +2,9 @@ import React from 'react';
 import styles from './Work.module.css';
 
 const PROJECTS = [
-    { id: 1, title: "Yashodha & Dhanushka", category: "Wedding", videoPreview: "/video1.mp4", link: "https://web.facebook.com/share/v/1Dgj3XpKam/" },
+    { id: 1, title: "Anjali & Sachini", category: "Wedding", videoPreview: "/video1.mp4", link: "https://web.facebook.com/share/v/1AmW7C2Exx/" },
     { id: 2, title: "Bride & Groom", category: "Wedding", videoPreview: "/video2.mp4", link: "https://web.facebook.com/share/v/19wbiiUZvc/" },
-    { id: 3, title: "Bride & Groom", category: "Engagement", videoPreview: "/video3.mp4", link: "https://web.facebook.com/share/v/18HxufVMtv/" },
+    { id: 3, title: "Savi & Harsha", category: "Wedding", videoPreview: "/video3.mp4", link: "https://web.facebook.com/share/v/17TgRD6KUp/" },
     { id: 4, title: "Bride & Groom", category: "Wedding", videoPreview: "/video4.mp4", link: "https://web.facebook.com/share/v/1AiSvKczmT/" }
 ];
 
